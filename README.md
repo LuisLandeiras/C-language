@@ -1,2 +1,2 @@
 # Prog
-Programção em c
+Trabalhos feitos em linguagem c.
