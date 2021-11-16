@@ -1,4 +1,4 @@
-## Soma dois arrays de tamanho variável dado pelo utilizador:
+## This project sum the array with a random length:
 ```` c
 #include<stdio.h>
 int add = 0;
