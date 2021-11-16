@@ -1,4 +1,4 @@
-## Subtrai dois arrays de tamanho variável dado pelo utilizador:
+## This project subtract an array with a random length
 ```` c
 #include<stdio.h>
 
