@@ -1,2 +1,2 @@
 # Prog
-Trabalhos feitos em linguagem c.
+Some project in c language.
