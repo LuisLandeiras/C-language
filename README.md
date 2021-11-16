@@ -1,2 +1,2 @@
 # Prog
-Some project in c language.
+Some projects in c language.
