@@ -1,5 +1,5 @@
 ## Subtrai dois arrays de tamanho variável dado pelo o utilizador
-´´´´ c
+```` c
 #include<stdio.h>
 
 int subtrairanterior(int vetor[], int n){
@@ -26,4 +26,4 @@ int main(void){
     subtrairanterior(vetor, n);
     return 0;
 }
-´´´´
+````
