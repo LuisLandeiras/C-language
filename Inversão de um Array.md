@@ -1,4 +1,4 @@
-## Inverte o Array dado pelo utilizador:
+## This project reverses an array that is given by the user:
 ````c
 #include <stdio.h>
 
