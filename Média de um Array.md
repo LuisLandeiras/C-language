@@ -1,4 +1,4 @@
-## This project calculate the avarage of the array that is given by the user:
+## This project calculate the avarage of the array which is given by the user:
 ````c
 #include<stdio.h>
 int add = 0;
