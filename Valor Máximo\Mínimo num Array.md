@@ -1,4 +1,4 @@
-## Indica o valor máximo e mínimo do array dado pelo utilizador:
+## This project find in between the array the maximum and the minimum number:
 ````c
 #include<stdio.h>
 
