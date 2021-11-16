@@ -1,4 +1,4 @@
-## This project reverses an array that is given by the user:
+## This project reverses an array which is given by the user:
 ````c
 #include <stdio.h>
 
