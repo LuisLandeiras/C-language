@@ -1,4 +1,4 @@
-## Calcula a média do Array dado pelo utilizador:
+## This project calculate the avarage of the array that is given by the user:
 ````c
 #include<stdio.h>
 int add = 0;
