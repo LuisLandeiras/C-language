@@ -1,4 +1,4 @@
-## This project subtract an array with a random length
+## This project subtract an array with a random length:
 ```` c
 #include<stdio.h>
 
