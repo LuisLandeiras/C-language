@@ -1,4 +1,4 @@
-## Subtrai dois arrays de tamanho variável dado pelo o utilizador
+## Subtrai dois arrays de tamanho variável dado pelo utilizador:
 ```` c
 #include<stdio.h>
 
