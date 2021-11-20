@@ -2,7 +2,9 @@
 #include<conio.h>
 #include<stdlib.h>
 int n,m,x;
-void read2Dim(int v[n][m], int n, int m){
+
+//Function used to read both of the matrices
+void read2Dim(int v[n][m]){
     printf("Define the matrix:\n");
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){
@@ -10,7 +12,9 @@ void read2Dim(int v[n][m], int n, int m){
         }
     }
 }
-void write2Dim(int v[n][m],int b[n][m], int n, int m){
+
+//Function used to write both of the matrices 
+void write2Dim(int v[n][m],int b[n][m]){
     printf("Matrix 1:\n");
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){
@@ -26,7 +30,9 @@ void write2Dim(int v[n][m],int b[n][m], int n, int m){
         printf("\n");
     }
 }
-void sum2Dim(int v[n][m],int b[n][m], int n, int m){
+
+//Function used to do the sum of the matrices
+void sum2Dim(int v[n][m],int b[n][m]){
     printf("Matrix sum:\n");
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){ 
@@ -35,7 +41,9 @@ void sum2Dim(int v[n][m],int b[n][m], int n, int m){
         printf("\n");
     }
 }
-void sub2Dim(int v[n][m],int b[n][m], int n, int m){
+
+//Function used to do the subtraction of the matrices
+void sub2Dim(int v[n][m],int b[n][m]){
     printf("Matrix subtraction:\n");
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){ 
@@ -44,60 +52,72 @@ void sub2Dim(int v[n][m],int b[n][m], int n, int m){
         printf("\n");
     }
 }
-void mult2Dim(int v[n][m],int b[n][m],int n,int m){
+
+//Function used to do the multiplication of the matrices
+//This function only multiplicate matrices with the same length and height
+void mult2Dim(int v[n][m],int b[n][m]){
     printf("Matrix multiplication:\n");
-    int mult = 0, matrixmult[n][m];
+    int r[n][m];
+    //Inicializate all the positions of the array by zero
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j < n; j++){
+            r[i][j]=0;
+        }   
+    }
+    //Cicle reponsible for the multiplication of both of the matrices
     for (int i=0; i<n; i++){
         for(int j=0;j<m;j++){
-            matrixmult[n][m]=0;
             for(int x=0;x<n;x++){ 
-                 mult += (v[i][x] * b[x][j]);
+                 r[i][j] += (v[i][x] * b[x][j]);
             }
-            matrixmult[i][j] = mult;               
-            mult = 0;
         }
-        mult = 0;
     }
+    //Cicle responsible for showing the matrix multiplication
     for (int i=0; i<n; i++){
         for (int j = 0; j<m; j++){
-            printf(" %i ", matrixmult[i][j]);
+            printf(" %i ", r[i][j]);
         }
         printf("\n");
     }
 }
-void menu(int x, int v[n][m], int b[n][m], int n, int m){
+
+//Function that show the menu
+void menu(int v[n][m], int b[n][m]){
     printf("Indicate the option you want:\n");
-    printf("1-Sum of matrix\n2-Subtraction of matrix\n3-Multiplication of matrix\n");
+    printf("1-Sum of matrices\n2-Subtraction of matrices\n3-Multiplication of matrices\n");
     scanf("%i", &x);
     switch(x){
         case 1:
-            read2Dim(v,n,m);
-            read2Dim(b,n,m);
-            write2Dim(v,b,n,m);
-            sum2Dim(v,b,n,m);
+            read2Dim(v);
+            read2Dim(b);
+            write2Dim(v,b);
+            sum2Dim(v,b);
         break;
         case 2:
-            read2Dim(v,n,m);
-            read2Dim(b,n,m);
-            write2Dim(v,b,n,m);
-            sub2Dim(v,b,n,m);
+            read2Dim(v);
+            read2Dim(b);
+            write2Dim(v,b);
+            sub2Dim(v,b);
         break;
         case 3:
+            //Only do the multiplication if the length is equal to height
             if(n == m){ 
-            read2Dim(v,n,m);
-            read2Dim(b,n,m);
-            write2Dim(v,b,n,m);
-            mult2Dim(v,b,n,m);
+            read2Dim(v);
+            read2Dim(b);
+            write2Dim(v,b);
+            mult2Dim(v,b);
             }
+            //If n != m show again the menu to start again
             else{
                 printf("\n");
-                printf("Both of the matrix need to have the same length and height!\n");
+                //This one is used if multiplication goes wrong(1)
+                printf("Both of the matrices need to have the same length and height!\n");
                 printf("Indicate the height of the matrix: ");
                 scanf("%i", &n);
                 printf("Indicate the length of the matrix: ");
                 scanf("%i", &m);
                 printf("\n");
-                menu(x,v,b,n,m);
+                menu(v,b);
             }
         break;
         default:printf("Option not available.\n");
@@ -105,13 +125,14 @@ void menu(int x, int v[n][m], int b[n][m], int n, int m){
 }
 int main(void){
     printf("\n");
-    printf("Indicate the height of the matrix: ");
+    //This one is used one the first inicialization of the programm(2)
+    printf("Indicate the height of the matrix: ");  
     scanf("%i", &n);
     printf("Indicate the length of the matrix: ");
     scanf("%i", &m); 
     printf("\n");
     int v[n][m];
     int b[n][m];
-    menu(x,v,b,n,m);
+    menu(v,b);
     return 0;
 }
